@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:clock"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="簡易時鐘" Height="450" Width="800" Icon="clock.png" ResizeMode="NoResize">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="163*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="95" Margin="30,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="737" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="80"/>
+        <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="95" Margin="30,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="414" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <Grid Margin="0,0,-0.4,0" Grid.RowSpan="2">
+            <TextBox x:Name="txtTime" HorizontalAlignment="Left" Height="95" Margin="30,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="737" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+            <TextBox x:Name="txtWeekDay" HorizontalAlignment="Left" Height="95" Margin="460,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="307" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+            <MediaElement x:Name="meSound" HorizontalAlignment="Left" Height="175" Margin="566,235,0,0" VerticalAlignment="Top" Width="175" Volume="1" Source="alert.wav"/>
+            <Button x:Name="btnSetAlert" Content="設定鬧鐘" HorizontalAlignment="Left" Height="42" Margin="30,235,0,0" VerticalAlignment="Top" Width="92" FontSize="20" Click="btnSetAlert_Click"/>
+            <Button x:Name="btnCancelAlert" Content="取消鬧鐘" HorizontalAlignment="Left" Height="42" Margin="143,235,0,0" VerticalAlignment="Top" Width="92" FontSize="20" Click="btnCancelAlert_Click"/>
+            <ComboBox x:Name="cmbHour" HorizontalAlignment="Left" Height="25" Margin="260,235,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.121,1.584"/>
+            <ComboBox x:Name="cmbMin" HorizontalAlignment="Left" Height="25" Margin="363,235,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.121,1.584"/>
+        </Grid>
     </Grid>
 </Window>
